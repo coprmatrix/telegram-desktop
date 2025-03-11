@@ -9,8 +9,8 @@
 %global optflags %(echo %{optflags} | sed 's/-g /-g1 /')
 
 Name: telegram-desktop
-Version: 5.10.3
-Release: 1%{?dist}
+Version: 5.11.1
+Release: 0%{?dist}
 
 # Application and 3rd-party modules licensing:
 # * Telegram Desktop - GPL-3.0-or-later with OpenSSL exception -- main tarball;
@@ -47,6 +47,7 @@ BuildRequires: cmake(tg_owt)
 BuildRequires: cmake(tl-expected)
 BuildRequires: cmake(ada)
 
+BuildRequires: pkgconfig(libsrtp2)
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(gio-2.0)
 BuildRequires: pkgconfig(glib-2.0)
@@ -80,11 +81,22 @@ BuildRequires: pkgconfig(xcb)
 BuildRequires: pkgconfig(xcb-keysyms)
 BuildRequires: pkgconfig(xcb-record)
 BuildRequires: pkgconfig(xcb-screensaver)
+BuildRequires: cmake(absl)
 
 BuildRequires: boost-devel
 BuildRequires: cmake
 BuildRequires: desktop-file-utils
-BuildRequires: ffmpeg-devel
+
+BuildRequires:  pkgconfig(libavcodec)
+BuildRequires:  pkgconfig(libavformat)
+BuildRequires:  pkgconfig(libavutil)
+BuildRequires:  pkgconfig(libjpeg)
+BuildRequires:  pkgconfig(libpipewire-0.3)
+BuildRequires:  pkgconfig(libpulse)
+BuildRequires:  pkgconfig(libswresample)
+BuildRequires:  pkgconfig(libswscale)
+
+
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: libappstream-glib
