@@ -27,6 +27,7 @@ Source0: %{url}/releases/download/v%{version}/%{appname}-%{version}-full.tar.gz
 
 # Telegram Desktop require more than 8 GB of RAM on linking stage.
 # Disabling all low-memory architectures.
+ExcludeArch: s390x
 
 BuildRequires: cmake(Microsoft.GSL)
 BuildRequires: cmake(OpenAL)
@@ -43,7 +44,7 @@ BuildRequires: cmake(Qt6WaylandClient)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: cmake(fmt)
 BuildRequires: cmake(range-v3)
-BuildRequires: cmake(tg_owt)
+BuildRequires: tg_owt-devel
 BuildRequires: cmake(tl-expected)
 BuildRequires: cmake(ada)
 
