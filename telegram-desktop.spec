@@ -9,7 +9,7 @@
 %global optflags %(echo %{optflags} | sed 's/-g /-g1 /')
 
 Name: telegram-desktop
-Version: 5.11.1
+Version: 5.13.1
 Release: 0%{?dist}
 
 # Application and 3rd-party modules licensing:
@@ -131,9 +131,11 @@ Provides: bundled(vazirmatn-fonts) = 27.2.2
 Provides: bundled(cppgir) = 0~git69ef481c
 Provides: bundled(minizip) = 1.2.13
 
-Patch0:   0002-Disable-saving-restrictions.patch
-Patch1:   0003-Disable-invite-peeking-restrictions.patch
-Patch2:   0004-Disable-accounts-limit.patch
+%define %{pth} https://raw.githubusercontent.com/huakim/telegram-desktop-patches/refs/heads/master/
+Patch0:   %{pth}0002-Disable-saving-restrictions.patch
+Patch1:   %{pth}0003-Disable-invite-peeking-restrictions.patch
+Patch2:   %{pth}0004-Disable-accounts-limit.patch
+#Patch3:   0005-Option-to-disable-stories.patch
 
 %description
 Telegram is a messaging app with a focus on speed and security, it’s super

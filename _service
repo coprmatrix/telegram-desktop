@@ -7,9 +7,4 @@
    <param name="regex">.*"tag_name"\s*:\s*"v(.*)"</param>
  </service>
  <service name="download_files" />
-  <!--service name="format_cmake" mode="buildtime">
-    <param name="cmake-directory">dwarfs</param>
-    <param name="file">dwarfs.spec</param>
-  </service-->
-
 </services>
