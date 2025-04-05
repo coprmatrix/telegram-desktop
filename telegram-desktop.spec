@@ -131,7 +131,7 @@ Provides: bundled(vazirmatn-fonts) = 27.2.2
 Provides: bundled(cppgir) = 0~git69ef481c
 Provides: bundled(minizip) = 1.2.13
 
-%define %{pth} https://raw.githubusercontent.com/huakim/telegram-desktop-patches/refs/heads/master/
+%global pth https://raw.githubusercontent.com/huakim/telegram-desktop-patches/refs/heads/master/
 Patch0:   %{pth}0002-Disable-saving-restrictions.patch
 Patch1:   %{pth}0003-Disable-invite-peeking-restrictions.patch
 Patch2:   %{pth}0004-Disable-accounts-limit.patch
