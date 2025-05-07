@@ -108,8 +108,8 @@ BuildRequires: libstdc++-devel
 BuildRequires: minizip-compat-devel
 BuildRequires: ninja-build
 BuildRequires: python3
+BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-qtbase-private-devel
-BuildRequires: qt6-qtbase-static
 BuildRequires: pkgconfig(openh264)
 
 Requires: hicolor-icon-theme
@@ -175,6 +175,7 @@ sed -i "/#include <openssl\/engine.h>/d" Telegram/SourceFiles/core/utils.cpp
     -DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION:BOOL=OFF \
     -DDESKTOP_APP_DISABLE_X11_INTEGRATION:BOOL=OFF \
     -DDESKTOP_APP_DISABLE_CRASH_REPORTS:BOOL=ON
+sed -i '1s/^/#define QGenericUnixServices QDesktopUnixServices/; s~private/qgenericunixservices_p.h~private/qdesktopunixservices_p.h~g;' Telegram/lib_base/base/platform/linux/base_linux_xdp_utilities.cpp
 %cmake_build
 
 %install
