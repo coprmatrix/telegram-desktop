@@ -96,7 +96,7 @@ BuildRequires:  pkgconfig(libpipewire-0.3)
 BuildRequires:  pkgconfig(libpulse)
 BuildRequires:  pkgconfig(libswresample)
 BuildRequires:  pkgconfig(libswscale)
-
+BuildRequires:  cmake(TDLib)
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -153,6 +153,8 @@ business messaging needs.
 %prep
 # Unpacking Telegram Desktop source archive...
 %autosetup -n %{appname}-%{version}-full -p1
+
+
 
 # Unbundling libraries... except minizip
 rm -rf Telegram/ThirdParty/{QR,dispatch,expected,fcitx-qt5,fcitx5-qt,hime,hunspell,jemalloc,kimageformats,lz4,nimf,range-v3,xxHash}
