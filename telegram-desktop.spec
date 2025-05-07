@@ -96,7 +96,7 @@ BuildRequires:  pkgconfig(libpipewire-0.3)
 BuildRequires:  pkgconfig(libpulse)
 BuildRequires:  pkgconfig(libswresample)
 BuildRequires:  pkgconfig(libswscale)
-BuildRequires:  cmake(TDLib)
+BuildRequires:  cmake(td)
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
